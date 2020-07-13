@@ -29,25 +29,25 @@ class Queue(object):
     def __str__(self):
         return ' '.join([str(i) for i in self.queue])
     
-    def isEmpty(self): # to check if queue is empty
+    def isEmpty(self):  
         return self.size <= 0
     
-    def enqueue(self, value): # to add an element from the rear end of the queue (poner cola)
+    def enqueue(self, value): # to add rear end of the queue (poner cola)
         if self.size >= self.limit:
-            return -1          # queue overflow
+            return -1          #overflow
         else:
             self.queue.append(value)
                 
-        if self.front is None:  # assign the rear as size of the queue and front as 0
+        if self.front is None:  #the rear as size of the queue and front as 0
             self.front = self.rear = 0
         else:
             self.rear = self.size
             
         self.size += 1
         
-    def dequeue(self): # to pop an element from the front end of the queue (remoder cola)
+    def dequeue(self): # to pop, front end of the queue (remoder cola)
         if self.isEmpty():
-            return -1          # queue underflow
+            return -1          #underflow
         else:
             self.queue.pop()
             self.size -= 1
@@ -58,12 +58,3 @@ class Queue(object):
     
     def getSize(self):
         return self.size
-
-# my_Queue = Queue()
-# for i in range(10):
-#     my_Queue.enqueue(i)
-# print(my_Queue)
-# print('Queue Size:',my_Queue.getSize())
-# my_Queue.dequeue()
-# print(my_Queue)
-# print('Queue Size:',my_Queue.getSize())
