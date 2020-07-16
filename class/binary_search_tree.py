@@ -61,3 +61,10 @@ class BSTNode:
         # forget about the left subtree
         # iterate through the nodes using a loop construct
         pass
+
+    # Return the maximum value found in the tree
+    def get_max(self):
+        if not self.right:
+            return self.value
+        else:
+            return self.right.get_max()
